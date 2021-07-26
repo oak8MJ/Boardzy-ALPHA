@@ -19,22 +19,29 @@ class GamingPage extends StatelessWidget {
                 img: AssetImage('images/razerhuntsman.png'),
               ),
               KeyboardSlot(
-                title: 'Logitech - G915',
+                title: 'Logitech G915',
                 category: 'Gaming',
                 img: AssetImage('images/logitechG.png'),
               ),
               KeyboardSlot(
-                title: 'Corsair - K70',
+                title: 'Corsair K70',
                 category: 'Gaming',
                 img: AssetImage('images/corsair.png'),
               ),
               KeyboardSlot(
-                title: 'Alienware - AW510K',
+                title: 'Alienware AW510K',
                 category: 'Gaming',
                 img: AssetImage(
                   'images/alienware.png',
                 ),
-              )
+              ),
+              KeyboardSlot(
+                title: 'Red Dragon K630',
+                category: 'Gaming',
+                img: AssetImage(
+                  'images/RedDragon.png',
+                ),
+              ),
             ],
           ),
         ),
