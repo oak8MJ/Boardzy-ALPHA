@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pages_familiar/login.dart';
 import 'package:pages_familiar/pages/appbar.dart';
+import 'package:pages_familiar/pages/chat.dart';
 import 'package:pages_familiar/pages/gaming.dart';
 import 'package:pages_familiar/pages/landingpage.dart';
 import 'package:pages_familiar/pages/officeboard.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/settings': (context) => SettingsPage(),
         '/Office': (context) => OfficePage(),
         '/gaming': (context) => GamingPage(),
+        '/Chat': (context) => ChatPage()
       },
     );
   }

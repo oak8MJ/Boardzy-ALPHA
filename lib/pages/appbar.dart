@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:pages_familiar/pages/account_page.dart';
 import 'package:pages_familiar/pages/categories.dart';
 import 'package:pages_familiar/pages/Home.dart';
+import 'package:pages_familiar/pages/chat.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -15,7 +16,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PageController _pageController = PageController();
-  List<Widget> _screens = [BlogPage(), CategoriesPage(), AccountPage()];
+  List<Widget> _screens = [
+    BlogPage(),
+    CategoriesPage(),
+    ChatPage(),
+    AccountPage(),
+  ];
 
   int _selectedIndex = 0;
 
@@ -66,17 +72,30 @@ class _HomePageState extends State<HomePage> {
                 ),
               )),
           BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat,
+              color: _selectedIndex == 2 ? Colors.blue : Colors.grey,
+            ),
+            // ignore: deprecated_member_use
+            title: Text(
+              'Chat',
+              style: TextStyle(
+                color: _selectedIndex == 2 ? Colors.blue : Colors.grey,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
-                color: _selectedIndex == 2 ? Colors.blue : Colors.grey,
+                color: _selectedIndex == 3 ? Colors.blue : Colors.grey,
               ),
               // ignore: deprecated_member_use
               title: Text(
                 'Account',
                 style: TextStyle(
-                  color: _selectedIndex == 2 ? Colors.blue : Colors.grey,
+                  color: _selectedIndex == 3 ? Colors.blue : Colors.grey,
                 ),
-              )),
+              ),),
         ],
       ),
     );
