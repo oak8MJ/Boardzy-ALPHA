@@ -31,7 +31,7 @@ class _SignInDemoState extends State<SignInDemo> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 0.0),
               child: Center(
                   child: Container(
                 width: 200,
@@ -64,6 +64,18 @@ class _SignInDemoState extends State<SignInDemo> {
                     hintText: 'Enter secure password'),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 15.0, right: 15.0, top: 15, bottom: 0),
+              //padding: EdgeInsets.symmetric(horizontal: 15),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Confirm Password',
+                    hintText: 'Confirm Password'),
+              ),
+            ),
             TextButton(
               onPressed: () {
                 // ignore: todo
@@ -90,7 +102,7 @@ class _SignInDemoState extends State<SignInDemo> {
               ),
             ),
             SizedBox(
-              height: 130,
+              height: 70,
             ),
             Container(child: Text('New User? Create Account'))
           ],
