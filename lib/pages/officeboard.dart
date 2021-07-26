@@ -14,7 +14,6 @@ class OfficePage extends StatelessWidget {
           child: Column(children: [
             microsoft(),
             Logitech(),
-            Rik907(),
             KeyboardSlot(
                 title: 'Placeholder',
                 category: 'office',
