@@ -11,14 +11,36 @@ class OfficePage extends StatelessWidget {
           title: Text("Office Keyboards"),
         ),
         body: SingleChildScrollView(
-          child: Column(children: [
-            microsoft(),
-            Logitech(),
-            KeyboardSlot(
-                title: 'Placeholder',
-                category: 'office',
-                img: AssetImage('images/download.png'))
-          ]),
+          child: Column(
+            children: [
+              KeyboardSlot(
+                title: 'Microsoft',
+                category: 'Office',
+                img: AssetImage('images/microsoftsboard.png'),
+              ),
+              KeyboardSlot(
+                title: 'Logitech',
+                category: 'Office',
+                img: AssetImage('images/logitechboard.png'),
+              ),
+              KeyboardSlot(
+                title: 'Rii RK 907',
+                category: 'Office',
+                img: AssetImage('images/Rik907.png'),
+              ),
+              KeyboardSlot(
+                title: 'WaterProof Thin Keyboard',
+                category: 'Office',
+                img: AssetImage(
+                  'images/waterproofboardf.png',
+                ),
+              ),
+              KeyboardSlot(
+                  title: 'Waterproof Keyboard with Touchpad',
+                  category: 'Office',
+                  img: AssetImage('images/waterprooftouchpad.png'))
+            ],
+          ),
         ),
       ),
     );

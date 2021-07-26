@@ -55,6 +55,22 @@ class OfficeCard extends StatelessWidget {
                 ),
               ],
             ),
+            ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('Gaming'),
+              subtitle: Text('Browse gaming keyboards'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('Browse'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/gaming');
+                  },
+                ),
+              ],
+            ),
           ],
         ),
       ),

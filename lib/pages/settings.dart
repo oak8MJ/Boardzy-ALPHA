@@ -13,7 +13,7 @@ class SettingsPage extends StatelessWidget {
         body: Container(
           child: Center(
             child: Column(
-              children: [Text('data')],
+              children: [Text('Settings Placeholder')],
             ),
           ),
         ),

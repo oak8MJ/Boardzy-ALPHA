@@ -67,7 +67,7 @@ class _SignInDemoState extends State<SignInDemo> {
             TextButton(
               onPressed: () {
                 // ignore: todo
-                //TODO FORGOT PASSWORD SCREEN GOES HERE
+                //TODO FORGOT PA SSWORD SCREEN GOES HERE
               },
               child: Text(
                 'Forgot Password',

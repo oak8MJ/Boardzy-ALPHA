@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pages_familiar/login.dart';
 import 'package:pages_familiar/pages/appbar.dart';
+import 'package:pages_familiar/pages/gaming.dart';
 import 'package:pages_familiar/pages/landingpage.dart';
 import 'package:pages_familiar/pages/officeboard.dart';
 import 'package:pages_familiar/pages/settings.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/signin': (context) => SignInDemo(),
         '/settings': (context) => SettingsPage(),
-        '/Office': (context) => OfficePage()
+        '/Office': (context) => OfficePage(),
+        '/gaming': (context) => GamingPage(),
       },
     );
   }
