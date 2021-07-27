@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:pages_familiar/pages/account_page.dart';
 import 'package:pages_familiar/pages/categories.dart';
 import 'package:pages_familiar/pages/Home.dart';
-import 'package:pages_familiar/pages/chat.dart';
+import 'package:pages_familiar/screens/home_screen.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _screens = [
     BlogPage(),
     CategoriesPage(),
-    ChatPage(),
+    HomeScreen(),
     AccountPage(),
   ];
 

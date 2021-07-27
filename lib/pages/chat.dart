@@ -1,6 +1,6 @@
-import 'dart:ui';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class ChatPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '');
+                    Navigator.pushNamed(context, '/Chat');
                   },
                   child: Text(
                     'Chat',
