@@ -1,8 +1,8 @@
 import 'package:firebase_database/firebase_database.dart';
+import 'package:pages_familiar/models/post.dart';
+import 'package:uuid/uuid.dart';
 
 class DataService {
-  final String uid;
-  DataService({required this.uid});
   final connection = FirebaseDatabase.instance.reference();
 
   //save user
@@ -13,5 +13,14 @@ class DataService {
       'uid': user.uid,
       'email': user.email,
     });
+  }
+
+  //savepost
+  Future<Post> savePost(image, title, category) async {
+    var id = Uuid().v1();
+    final postRef = connection.child('Post').child(id);
+    postRef
+        .set({'uid': id, 'image': image, 'title': title, 'category': category});
+    return Post(image: image, title: title, category: category, uid: id);
   }
 }

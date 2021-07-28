@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:pages_familiar/login.dart';
 import 'package:pages_familiar/models/message_model.dart';
 import 'package:pages_familiar/pages/appbar.dart';
+import 'package:pages_familiar/pages/social.dart';
 import 'package:pages_familiar/screens/home_screen.dart';
 import 'package:pages_familiar/pages/gaming.dart';
 import 'package:pages_familiar/pages/landingpage.dart';
@@ -77,6 +78,16 @@ class _StreamerState extends State<Streamer> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/login': (context) => LoginDemo(),
+        '/home': (context) => HomePage(),
+        '/signup': (context) => SignInDemo(),
+        '/settings': (context) => SettingsPage(),
+        '/Office': (context) => OfficePage(),
+        '/gaming': (context) => GamingPage(),
+        '/Chat': (context) => CreateKeyboard(),
+        '/Chatjohn': (context) => ChatScreen(user: john),
+      },
       home: StreamBuilder(
           stream: _streamProvider,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -84,16 +95,12 @@ class _StreamerState extends State<Streamer> {
               return snapshot.connectionState == ConnectionState.waiting
                   ? Container(child: Text('Still waiting'))
                   : Container(
-                      child: HomePage(),
+                      child: SignInDemo(),
                     ); //login screen
             } else {
-              return Container(
-                      child: Text('Homepage'),
-                    );
+              return HomePage();
             }
           }),
     );
   }
 }
-
-

@@ -8,6 +8,13 @@ class SignInDemo extends StatefulWidget {
 
 class _SignInDemoState extends State<SignInDemo> {
   final AuthService _auth = AuthService();
+  final FormKey = GlobalKey<FormState>();
+  var HidenShow = true;
+  void showText() {
+  setState(() {
+    HidenShow = !HidenShow;
+  });
+}
 
   String email = '';
   String password = '';
@@ -20,6 +27,7 @@ class _SignInDemoState extends State<SignInDemo> {
         title: Text("Sign In Page"),
       ),
       body: Form(
+        key: FormKey,
         child: Column(
           children: <Widget>[
             Padding(
@@ -49,6 +57,9 @@ class _SignInDemoState extends State<SignInDemo> {
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               child: TextFormField(
+                onChanged: (val) {
+                  setState(() => email = val.trim());
+                },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email',
@@ -56,15 +67,31 @@ class _SignInDemoState extends State<SignInDemo> {
               ),
             ),
             Padding(
+              
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
-                obscureText: true,
+                  
+                
+                onChanged: (val) {
+                  setState(() => password = val.trim());
+                },
+                obscureText: HidenShow,
+                
                 decoration: InputDecoration(
+                    suffixIcon: IconButton(
+  icon: HidenShow
+      ? Icon(Icons.visibility)
+      : Icon(Icons.visibility_off),
+  onPressed: () {
+    showText();
+  },
+),
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     hintText: 'Enter secure password'),
+                    
               ),
             ),
             Padding(
@@ -95,11 +122,18 @@ class _SignInDemoState extends State<SignInDemo> {
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/home');
+                onPressed: () async {
+                  if (FormKey.currentState!.validate()) {
+                    dynamic result =
+                        await _auth.registerFirebaseUser(email, password);
+                    if (result == null) {
+                      print('could not sign up');
+                      print(result);
+                    }
+                  }
                 },
                 child: Text(
-                  'Sign In',
+                  'Sign Up',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),

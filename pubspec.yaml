@@ -34,7 +34,12 @@ dependencies:
   firebase_database: ^7.1.2
   firebase_core: ^1.4.0
   provider: ^4.3.1
-  
+  image_picker: ^0.8.2
+  image_cropper: ^1.4.1
+  firebase_storage: ^10.0.1
+  permission_handler: ^8.1.4+2
+  uuid: ^3.0.4
+
 
 dev_dependencies:
   flutter_test:

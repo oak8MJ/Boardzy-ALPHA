@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pages_familiar/models/MyAppUser.dart';
+import 'package:pages_familiar/services/data_service.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -7,7 +8,12 @@ class AuthService {
   //create MyAppUser from Firebase User
 
   MyAppUser? _userfromFirebaseUser(User? user) {
-    user != null ? MyAppUser(uid: user.uid, email: user.email) : null;
+    return user != null
+        ? MyAppUser(
+            uid: user.uid,
+            email: user.email,
+          )
+        : null;
   }
 
   //create Firebase User
@@ -17,6 +23,9 @@ class AuthService {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
+      print(user);
+      DataService().saveUser(user);
+      return _userfromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
       return null;
@@ -29,6 +38,7 @@ class AuthService {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
+      return _userfromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
       return null;
@@ -44,6 +54,8 @@ class AuthService {
     }
   }
 
+  
 
-  Stream<MyAppUser?> get user => _auth.authStateChanges().map(_userfromFirebaseUser);
+  Stream<MyAppUser?> get user =>
+      _auth.authStateChanges().map(_userfromFirebaseUser);
 }
