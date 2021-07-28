@@ -135,7 +135,7 @@ List<Message> messages = [
   ),
   Message(
     sender: james,
-    time: '3:45 PM',
+    time: '3:17 PM',
     text: 'How\'s the dog',
     isLiked: false,
     unread: true,
