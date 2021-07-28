@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SignInDemo(),
-    );
-  }
-}
+import 'package:pages_familiar/services/auth.dart';
 
 class SignInDemo extends StatefulWidget {
   @override
@@ -20,6 +7,11 @@ class SignInDemo extends StatefulWidget {
 }
 
 class _SignInDemoState extends State<SignInDemo> {
+  final AuthService _auth = AuthService();
+
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +19,7 @@ class _SignInDemoState extends State<SignInDemo> {
       appBar: AppBar(
         title: Text("Sign In Page"),
       ),
-      body: SingleChildScrollView(
+      body: Form(
         child: Column(
           children: <Widget>[
             Padding(
@@ -56,7 +48,7 @@ class _SignInDemoState extends State<SignInDemo> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
-              child: TextField(
+              child: TextFormField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email',
@@ -67,7 +59,7 @@ class _SignInDemoState extends State<SignInDemo> {
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextField(
+              child: TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),

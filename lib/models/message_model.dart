@@ -123,7 +123,7 @@ List<Message> messages = [
     sender: james,
     time: '5:30 PM',
     text: 'Checkout the new logitech keyboard',
-    isLiked: true,
+    isLiked: false,
     unread: true,
   ),
   Message(
@@ -144,7 +144,7 @@ List<Message> messages = [
     sender: james,
     time: '3:15 PM',
     text: 'The GK61',
-    isLiked: true,
+    isLiked: false,
     unread: true,
   ),
   Message(
