@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pages_familiar/services/auth.dart';
 import 'package:pages_familiar/services/data_service.dart';
-import 'officeboard.dart';
 import 'package:flutter/widgets.dart';
-import 'dart:io';
-import 'package:pages_familiar/auth.dart';
 
 class CreateKeyboard extends StatefulWidget {
   const CreateKeyboard({Key? key}) : super(key: key);
@@ -14,7 +10,7 @@ class CreateKeyboard extends StatefulWidget {
 }
 
 class _CreateKeyboardState extends State<CreateKeyboard> {
-  final AuthService _auth = AuthService();
+
   final DataService _data = DataService();
   String image = '';
   String title = '';
