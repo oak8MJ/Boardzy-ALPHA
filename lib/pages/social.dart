@@ -68,7 +68,7 @@ class _CreateKeyboardState extends State<CreateKeyboard> {
             child: MaterialButton(
                 child: Text('Upload'),
                 onPressed: () async {
-                  
+                  Navigator.pushNamed(context, '/home');
                   if (FormKey.currentState!.validate()) {
                     dynamic result =
                         await _data.savePost(image, title, category);
