@@ -4,5 +4,5 @@ class Post {
   final String title;
   final String? category;
 
-  Post({required this.image, required this.title, required this.category, required this.uid});
+  Post(data, {required this.image, required this.title, required this.category, required this.uid});
 }

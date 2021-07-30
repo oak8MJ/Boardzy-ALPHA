@@ -1,7 +1,11 @@
 import 'dart:ui';
-
+import 'package:uuid/uuid.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:pages_familiar/pages/posts.dart';
+
+final DBRef = FirebaseDatabase.instance.reference();
 
 class BlogPage extends StatefulWidget {
   BlogPage({Key? key}) : super(key: key);
@@ -11,22 +15,93 @@ class BlogPage extends StatefulWidget {
 }
 
 class _BlogPageState extends State<BlogPage> {
+  List postList = [];
   @override
+  void initState() {
+    super.initState();
+
+    DatabaseReference postsRef =
+        FirebaseDatabase.instance.reference().child('Post');
+    postsRef.once().then((DataSnapshot snap) {
+      var KEYS = snap.value.keys;
+      var DATA = snap.value;
+
+      postList.clear();
+
+      for (var individualKey in KEYS) {
+        Posts posts = new Posts(
+          DATA[individualKey]['category'],
+          DATA[individualKey]['image'],
+          DATA[individualKey]['title'],
+          DATA[individualKey]['uid'],
+        );
+        postList.add(posts);
+      }
+      var postLength = postList.length;
+      setState(() {
+        print('Length : $postLength');
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
+    // var postList;
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
-      appBar: AppBar(
-        title: Text("Home"),
-        automaticallyImplyLeading: false,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            BuildApexPro(),
-            BuildClixKeyboard(),
-            BuildMurphKeyboard(),
-            BuildGk61(),
-            BuildHuntsman()
+        backgroundColor: Colors.grey.shade300,
+        appBar: AppBar(
+          title: Text("Home"),
+          automaticallyImplyLeading: false,
+        ),
+        body: new Container(
+          child: postList.length == 0
+              ? new Text('No Posted Keyboards')
+              : new ListView.builder(
+                  itemCount: postList.length == 0 ? 0 : postList.length,
+                  itemBuilder: (_, index) {
+                    return PostsUI(
+                        postList[index].category,
+                        postList[index].image,
+                        postList[index].title,
+                        postList[index].uid);
+                  },
+                ),
+        ));
+  }
+
+  Widget PostsUI(String category, String image, String title, String uid) {
+    print('image: $image');
+    return new Card(
+      elevation: 10.0,
+      margin: EdgeInsets.all(15.0),
+      child: new Container(
+        padding: EdgeInsets.all(14.0),
+        child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                new Text(
+                  category,
+                  style: Theme.of(context).textTheme.subtitle1,
+                  textAlign: TextAlign.center,
+                ),
+                new Text(
+                  title,
+                  style: Theme.of(context).textTheme.subtitle1,
+                  textAlign: TextAlign.center,
+                ),
+                new Image.network(
+                  image,
+                  fit: BoxFit.cover,
+                ),
+                new Text(
+                  uid,
+                  style: Theme.of(context).textTheme.subtitle1,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            )
           ],
         ),
       ),
@@ -58,7 +133,6 @@ class BuildApexPro extends StatelessWidget {
                       height: 20,
                     ),
                     Ink.image(
-                      
                         image: AssetImage('images/apexpro.jpg'), height: 150),
                   ],
                 )),

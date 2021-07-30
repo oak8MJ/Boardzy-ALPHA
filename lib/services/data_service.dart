@@ -21,6 +21,9 @@ class DataService {
     final postRef = connection.child('Post').child(id);
     postRef
         .set({'uid': id, 'image': image, 'title': title, 'category': category});
-    return Post(image: image, title: title, category: category, uid: id);
+    return Post(title ,category: category, image: image, uid: id, title: '$title');
+
+    
   }
+  
 }
