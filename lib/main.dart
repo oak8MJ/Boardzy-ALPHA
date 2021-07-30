@@ -83,7 +83,7 @@ class _StreamerState extends State<Streamer> {
       routes: {
         '/login': (context) => LoginDemo(),
         '/home': (context) => HomePage(),
-        '/signup': (context) => SignInDemo(),
+        '/signin': (context) => SignInDemo(),
         '/signout': (context) => LandingPage(),
         '/Office': (context) => OfficePage(),
         '/gaming': (context) => GamingPage(),
