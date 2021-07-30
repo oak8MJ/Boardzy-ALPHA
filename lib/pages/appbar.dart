@@ -6,7 +6,6 @@ import 'package:pages_familiar/pages/account_page.dart';
 import 'package:pages_familiar/pages/categories.dart';
 import 'package:pages_familiar/pages/Home.dart';
 import 'package:pages_familiar/pages/social.dart';
-import 'package:pages_familiar/screens/home_screen.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
