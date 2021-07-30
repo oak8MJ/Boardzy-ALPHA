@@ -11,10 +11,10 @@ class _SignInDemoState extends State<SignInDemo> {
   final FormKey = GlobalKey<FormState>();
   var HidenShow = true;
   void showText() {
-  setState(() {
-    HidenShow = !HidenShow;
-  });
-}
+    setState(() {
+      HidenShow = !HidenShow;
+    });
+  }
 
   String email = '';
   String password = '';
@@ -67,31 +67,26 @@ class _SignInDemoState extends State<SignInDemo> {
               ),
             ),
             Padding(
-              
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
-                  
-                
                 onChanged: (val) {
                   setState(() => password = val.trim());
                 },
                 obscureText: HidenShow,
-                
                 decoration: InputDecoration(
                     suffixIcon: IconButton(
-  icon: HidenShow
-      ? Icon(Icons.visibility)
-      : Icon(Icons.visibility_off),
-  onPressed: () {
-    showText();
-  },
-),
+                      icon: HidenShow
+                          ? Icon(Icons.visibility)
+                          : Icon(Icons.visibility_off),
+                      onPressed: () {
+                        showText();
+                      },
+                    ),
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     hintText: 'Enter secure password'),
-                    
               ),
             ),
             Padding(
@@ -129,6 +124,9 @@ class _SignInDemoState extends State<SignInDemo> {
                     if (result == null) {
                       print('could not sign up');
                       print(result);
+                    } else {
+                      print('sign up succsesful');
+                      Navigator.pushNamed(context, '/home');
                     }
                   }
                 },

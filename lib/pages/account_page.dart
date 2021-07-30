@@ -44,10 +44,10 @@ class _AccountPageState extends State<AccountPage> {
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/settings');
+                    Navigator.pushNamed(context, '/signout');
                   },
                   child: Text(
-                    'Settings',
+                    'Sign Out',
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ),

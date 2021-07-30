@@ -84,7 +84,7 @@ class _StreamerState extends State<Streamer> {
         '/login': (context) => LoginDemo(),
         '/home': (context) => HomePage(),
         '/signup': (context) => SignInDemo(),
-        '/settings': (context) => SettingsPage(),
+        '/signout': (context) => LandingPage(),
         '/Office': (context) => OfficePage(),
         '/gaming': (context) => GamingPage(),
         '/Chat': (context) => CreateKeyboard(),
@@ -100,7 +100,7 @@ class _StreamerState extends State<Streamer> {
                       child: SignInDemo(),
                     ); //login screen
             } else {
-              return HomePage();
+              return LandingPage();
             }
           }),
     );
