@@ -69,7 +69,6 @@ class _BlogPageState extends State<BlogPage> {
   }
 
   Widget PostsUI(String category, String image, String title, String uid) {
-    print('image: $image');
     return new Card(
       elevation: 10.0,
       margin: EdgeInsets.all(15.0),

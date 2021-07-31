@@ -24,7 +24,7 @@ class _SignInDemoState extends State<SignInDemo> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Sign In Page"),
+        title: Text("Sign Up Page"),
       ),
       body: Form(
         key: FormKey,
@@ -35,14 +35,13 @@ class _SignInDemoState extends State<SignInDemo> {
               child: Center(
                   child: Container(
                 width: 200,
-                height: 150,
+                height: 140,
                 //comment
                 /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
               )),
             ),
-            
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: const EdgeInsets.only(
@@ -80,7 +79,6 @@ class _SignInDemoState extends State<SignInDemo> {
                     hintText: 'Enter secure password'),
               ),
             ),
-            
             TextButton(
               onPressed: () {
                 // ignore: todo
@@ -116,10 +114,6 @@ class _SignInDemoState extends State<SignInDemo> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 70,
-            ),
-            Container(child: Text('New User? Create Account'))
           ],
         ),
       ),
