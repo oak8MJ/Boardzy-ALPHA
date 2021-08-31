@@ -45,57 +45,67 @@ class _HomePageState extends State<HomePage> {
         physics: NeverScrollableScrollPhysics(),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        
         onTap: _onItemTapped,
         items: [
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
-                color: _selectedIndex == 0 ? Colors.blue : Colors.grey,
+                color:
+                    _selectedIndex == 0 ? Colors.purple : Colors.black
               ),
               // ignore: deprecated_member_use
               title: Text(
                 'Home',
                 style: TextStyle(
-                  color: _selectedIndex == 0 ? Colors.blue : Colors.grey,
+                  color: _selectedIndex == 0
+                      ? Colors.purple
+                      : Colors.black
                 ),
               )),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.reorder,
-                color: _selectedIndex == 1 ? Colors.blue : Colors.grey,
+                color:
+                    _selectedIndex == 1 ? Colors.purple : Colors.black
               ),
               // ignore: deprecated_member_use
               title: Text(
                 'Categories',
                 style: TextStyle(
-                  color: _selectedIndex == 1 ? Colors.blue : Colors.grey,
+                  color: _selectedIndex == 1
+                      ? Colors.purple
+                      : Colors.black
                 ),
               )),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.chat,
-              color: _selectedIndex == 2 ? Colors.blue : Colors.grey,
+              color: _selectedIndex == 2 ? Colors.purple : Colors.black
             ),
             // ignore: deprecated_member_use
             title: Text(
               'Chat',
               style: TextStyle(
-                color: _selectedIndex == 2 ? Colors.blue : Colors.grey,
+                color:
+                    _selectedIndex == 2 ? Colors.purple : Colors.black
               ),
             ),
           ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                color: _selectedIndex == 3 ? Colors.blue : Colors.grey,
+            icon: Icon(
+              Icons.person,
+              color: _selectedIndex == 3 ? Colors.purple : Colors.black
+            ),
+            // ignore: deprecated_member_use
+            title: Text(
+              'Account',
+              style: TextStyle(
+                color:
+                    _selectedIndex == 3 ? Colors.purple : Colors.black
               ),
-              // ignore: deprecated_member_use
-              title: Text(
-                'Account',
-                style: TextStyle(
-                  color: _selectedIndex == 3 ? Colors.blue : Colors.grey,
-                ),
-              ),),
+            ),
+          ),
         ],
       ),
     );

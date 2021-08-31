@@ -3,16 +3,14 @@ import 'dart:ffi';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pages_familiar/login.dart';
-import 'package:pages_familiar/models/message_model.dart';
 import 'package:pages_familiar/pages/appbar.dart';
 import 'package:pages_familiar/pages/social.dart';
-import 'package:pages_familiar/screens/home_screen.dart';
 import 'package:pages_familiar/pages/gaming.dart';
 import 'package:pages_familiar/pages/landingpage.dart';
 import 'package:pages_familiar/pages/officeboard.dart';
 import 'package:pages_familiar/pages/settings.dart';
 import 'package:pages_familiar/pages/signup.dart';
-import 'package:pages_familiar/screens/chat_screen.dart';
+
 import 'package:pages_familiar/services/auth.dart';
 
 void main() {
@@ -85,8 +83,7 @@ class _StreamerState extends State<Streamer> {
         '/signout': (context) => LandingPage(),
         '/Office': (context) => OfficePage(),
         '/gaming': (context) => GamingPage(),
-        '/Chat': (context) => CreateKeyboard(),
-        '/Chatjohn': (context) => ChatScreen(user: john),
+        '/Chat': (context) => CreateKeyboard()
       },
       home: StreamBuilder(
           stream: _streamProvider,
