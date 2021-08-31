@@ -94,11 +94,6 @@ class _BlogPageState extends State<BlogPage> {
                   image,
                   fit: BoxFit.cover,
                 ),
-                new Text(
-                  uid,
-                  style: Theme.of(context).textTheme.subtitle1,
-                  textAlign: TextAlign.center,
-                ),
               ],
             )
           ],

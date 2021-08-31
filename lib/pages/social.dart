@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pages_familiar/services/data_service.dart';
 import 'package:flutter/widgets.dart';
 
-
-
 class CreateKeyboard extends StatefulWidget {
   const CreateKeyboard({Key? key}) : super(key: key);
 
@@ -16,15 +14,13 @@ class _CreateKeyboardState extends State<CreateKeyboard> {
   String image = '';
   String title = '';
   String category = '';
-  
-  
+
   final FormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        
         key: FormKey,
         child: Column(children: <Widget>[
           Padding(
@@ -66,7 +62,9 @@ class _CreateKeyboardState extends State<CreateKeyboard> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: MaterialButton(
+                color: Colors.blue,
                 child: Text('Upload'),
+                textColor: Colors.red,
                 onPressed: () async {
                   Navigator.pushNamed(context, '/home');
                   if (FormKey.currentState!.validate()) {
